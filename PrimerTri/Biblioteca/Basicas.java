@@ -36,6 +36,8 @@ public class Basicas {
 
         System.out.println("La matriz es una " + rows + "x" + cols);
 
+        // Esto me echaron una ayudita geremías, ya que no tenía ni puta idea //
+        // de como mostrar la matriz completa en pantalla.
         int[][] array = fillFromKeyboard(rows, cols);
         System.out.println("La matriz introducida es: ");
         print2DArray(array);
