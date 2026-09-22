@@ -27,17 +27,34 @@ public class Basicas {
     }
 
     // funcion hace la traspuesta
-
     public static int[][] transpose(int[][] array) {
 
         int rows = array.length;
         int cols = array[0].length;
         int[][] transposed = new int[cols][rows];
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++)
+            for (int j = 0; j < cols; j++) {
                 transposed[j][i] = array[i][j];
+            }
         }
         return transposed;
     }
 
+    // funcion para comprobar si es simetrica
+    public static boolean isSimetrica(int[][] array) {
+        int rows = array.length;
+        int cols = array[0].length;
+
+        if (rows != cols) {
+            return false;
+        }
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (array[i][j] != array[j][i]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
