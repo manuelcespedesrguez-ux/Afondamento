@@ -1,10 +1,10 @@
-package Biblioteca;
+import Biblioteca.Basicas;
 
-public class SimetricaM {
-    
+public class Test2 {
+  
     @SuppressWarnings("resource")
     public static void main(String[] args) {
-
+        
         System.out.println("Introduce un numero de filas: ");
         java.util.Scanner sc = new java.util.Scanner(System.in);
         int rows = sc.nextInt();
@@ -13,16 +13,9 @@ public class SimetricaM {
         int cols = fulgen.nextInt();
 
         int[][] matriz = Basicas.fillFromKeyboard(rows, cols);
-
-        Basicas.trace(matriz);
-        System.out.println("La traza de la matriz es: " + Basicas.trace(matriz));
-
-        Basicas.isSymmetric(matriz);
-        if (Basicas.isSymmetric(matriz)) {
-            System.out.println("La matriz es simétrica");
-        } else {
-            System.out.println("La matriz no es simétrica");
-        }
+        
+        System.out.println("La matriz transpuesta es: ");
+        Basicas.print2DArray(Biblioteca.Basicas.transpose(matriz));
 
     }
 

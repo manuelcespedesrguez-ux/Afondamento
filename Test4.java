@@ -1,7 +1,7 @@
-package Biblioteca;
+import Biblioteca.Basicas;
 
-public class SimetricaM {
-    
+public class Test4 {
+
     @SuppressWarnings("resource")
     public static void main(String[] args) {
 
@@ -14,16 +14,6 @@ public class SimetricaM {
 
         int[][] matriz = Basicas.fillFromKeyboard(rows, cols);
 
-        Basicas.trace(matriz);
-        System.out.println("La traza de la matriz es: " + Basicas.trace(matriz));
-
-        Basicas.isSymmetric(matriz);
-        if (Basicas.isSymmetric(matriz)) {
-            System.out.println("La matriz es simétrica");
-        } else {
-            System.out.println("La matriz no es simétrica");
-        }
-
+        Basicas.isDiagonal(matriz);
     }
-
 }

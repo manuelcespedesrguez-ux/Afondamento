@@ -1,7 +1,7 @@
-package Biblioteca;
+import Biblioteca.Basicas;
 
-public class SimetricaM {
-    
+public class Test3 {
+
     @SuppressWarnings("resource")
     public static void main(String[] args) {
 
