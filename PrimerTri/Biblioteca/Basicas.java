@@ -91,4 +91,43 @@ public class Basicas {
         System.out.println("La matriz es diagonal y su traza es: " + trace(array));
     }
 
+    // funcion de suma y resta
+    public static void sumaArrays(int[][] array, int[][] array2) {
+        int rows = array.length;
+        int cols = array[0].length;
+
+        if (rows != array2.length || cols != array2[0].length) {
+            System.out.println("Las matrices deben tener las mismas dimensiones para sumarse.");
+            return;
+        }
+
+        int[][] resultado = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                resultado[i][j] = array[i][j] + array2[i][j];
+            }
+        }
+
+        print2DArray(resultado);
+    } 
+
+    public static void restaArrays(int[][] array, int[][] array2) {
+        int rows = array.length;
+        int cols = array[0].length;
+
+        if (rows != array2.length || cols != array2[0].length) {
+            System.out.println("Las matrices deben tener las mismas dimensiones para restarse.");
+            return;
+        }
+
+        int[][] resultado = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                resultado[i][j] = array[i][j] - array2[i][j];
+            }
+        }
+
+        print2DArray(resultado);
+    }
+
 }
