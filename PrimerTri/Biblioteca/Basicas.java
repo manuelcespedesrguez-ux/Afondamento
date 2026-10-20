@@ -130,4 +130,30 @@ public class Basicas {
         print2DArray(resultado);
     }
 
+    // funcion multiplicación
+    public static void multiArrays(int[][] array, int[][] array2) {
+
+        int rows1 = array.length;
+        int cols1 = array[0].length;
+        int rows2 = array2.length;
+        int cols2 = array2[0].length;
+
+        if (cols1 != rows2) {
+            System.out.println("Las matrices deben coincidir en columnas o filas para poder multiplicarse");
+            return;
+        }
+
+        int[][] resultado = new int[rows1][cols2];
+        for (int i = 0; i < rows1; i++) {           // Filas de A rows = 2
+            for (int j = 0; j < cols2; j++) {       // Columnas de B cols =2
+                for (int k = 0; k < cols1; k++) {   // Elementos compartidos= 3 (columnas de A / filas de B)
+                    resultado[i][j] += array[i][k] * array2[k][j];
+                }
+            }
+        }
+
+        print2DArray(resultado);
+
+    }
+
 }
