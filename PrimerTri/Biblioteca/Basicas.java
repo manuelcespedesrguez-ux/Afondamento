@@ -109,7 +109,7 @@ public class Basicas {
         }
 
         print2DArray(resultado);
-    } 
+    }
 
     public static void restaArrays(int[][] array, int[][] array2) {
         int rows = array.length;
@@ -144,9 +144,9 @@ public class Basicas {
         }
 
         int[][] resultado = new int[rows1][cols2];
-        for (int i = 0; i < rows1; i++) {           // Filas de A rows = 2
-            for (int j = 0; j < cols2; j++) {       // Columnas de B cols =2
-                for (int k = 0; k < cols1; k++) {   // Elementos compartidos= 3 (columnas de A / filas de B)
+        for (int i = 0; i < rows1; i++) { // Filas de A rows = 2
+            for (int j = 0; j < cols2; j++) { // Columnas de B cols =2
+                for (int k = 0; k < cols1; k++) { // Elementos compartidos= 3 (columnas de A / filas de B)
                     resultado[i][j] += array[i][k] * array2[k][j];
                 }
             }
@@ -156,4 +156,40 @@ public class Basicas {
 
     }
 
+    // Multiplicacion de 3 matrices
+    public static void multiThreeArrays(int[][] arrayA, int[][] arrayB, int[][] arrayC) {
+        int rowsA = arrayA.length;
+        int colsA = arrayA[0].length;
+        int rowsB = arrayB.length;
+        int colsB = arrayB[0].length;
+        int rowsC = arrayC.length;
+        int colsC = arrayC[0].length;
+
+        if (colsA != rowsB || colsB != rowsC) {
+            System.out.println("Error en las dimensiones:");
+            System.out.println("- Las columnas de A deben coincidir con las filas de B.");
+            System.out.println("- Las columnas de B deben coincidir con las filas de C.");
+            return;
+        }
+
+        int[][] tempResult = new int[rowsA][colsB];
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
+                for (int k = 0; k < colsA; k++) { 
+                    tempResult[i][j] += arrayA[i][k] * arrayB[k][j];
+                }
+            }
+        }
+
+        int[][] finalResult = new int[rowsA][colsC]; 
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsC; j++) {
+                for (int k = 0; k < colsB; k++) {
+                    finalResult[i][j] += tempResult[i][k] * arrayC[k][j]; 
+                }
+            }
+        }
+
+        print2DArray(finalResult);
+    }
 }
